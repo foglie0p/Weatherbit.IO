@@ -475,7 +475,7 @@ void WeatherbitIO::value(const char *val) {
     else
     if (currentKey == "high_temp") forecast->high_temp_day[arrayIndex] = value.toFloat();
     else
-    if (currentKey == "sunset_ts") forecast->sunrise_unix[arrayIndex] = (uint32_t)value.toInt() - 7620;		// Mixed up by Weatherbit & off by 2h07m
+    if (currentKey == "sunset_ts") forecast->sunset_unix[arrayIndex] = (uint32_t)value.toInt();
 	else
     if (currentKey == "ozone") forecast->average_ozone[arrayIndex] = value.toFloat();
     else
@@ -489,7 +489,7 @@ void WeatherbitIO::value(const char *val) {
     else
     if (currentKey == "ts") forecast->forecast_start_period_utc[arrayIndex] = (uint32_t)value.toInt();
     else
-    if (currentKey == "sunrise_ts") forecast->sunset_unix[arrayIndex] = (uint32_t)value.toInt();		// Mixed up by Weatherbit between sunrise and sunset
+    if (currentKey == "sunrise_ts") forecast->sunrise_unix[arrayIndex] = (uint32_t)value.toInt();
 	else
     if (currentKey == "app_min_temp") forecast->app_min_temp[arrayIndex] = value.toFloat();
     else
